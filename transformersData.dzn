@@ -2,8 +2,8 @@
 % Example 1
 
 n = 2;
-limitFerro = 6; 
-limitHours = 28;
+lFerro = 6; 
+lHours = 28;
 ferro = [2, 1];
 hours = [7, 8];
 prof = [120000, 80000];

@@ -27,7 +27,7 @@ constraint all_different([Gonzalez, Garcia, Lopez]);
 constraint all_different([clasica, pop, jazz]);
 constraint all_different([vCuatro, vCinco, vSeis]);
 
-constraint Juan != vCuatro /\ Gonzalez != vSeis /\ Gonzalez == clasica;
+constraint Juan != Gonzalez /\ Juan != vCuatro /\ Gonzalez != vSeis /\ Gonzalez == clasica;
 constraint pop != Garcia /\ pop != vCuatro;
 constraint Oscar != Lopez /\ Oscar == vCinco;
 constraint Dario != jazz;

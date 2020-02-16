@@ -23,5 +23,7 @@ constraint sum(i in range)( seq[i] * (i - 1) ) == 0;
 constraint sum(seq) == size;
 constraint forall(i in range)( among(seq[i], seq, i..i) );
 
+solve satisfy;
+
 % Output
 output[show(seq)];

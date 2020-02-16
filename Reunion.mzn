@@ -1,20 +1,27 @@
+% Reunion
+% Carlos Esteban Murillo S. - 1526857
+
+%Libraries
 include "alldifferent.mzn";
 
+%Parameters
 array[int] of string: persons;
 
 array[int, 1..2] of int: next;
 array[int, 1..2] of int: separate;
 array[int, 1..3] of int: distance;
 
+% Constants
 int: nnext = floor(length(next) / 2);
 int: nsep = floor(length(separate) / 2);
 int: ndis = floor(length(distance) / 3);
 
 int: l = length(persons);
-int: digs = ceil(log(10.0,int2float(l)));
 
+%Array of decision variables
 array[1..l] of var 1..l: per;
 
+% Constraints
 constraint alldifferent(per);
 
 constraint forall(i in 1..ndis)(
@@ -40,9 +47,13 @@ constraint forall(p in 1..nsep)(
 constraint forall(p in 1..ndis)(
   exists(i,j in 1..l)(
       per[i] == distance[p, 1] /\ per[j] == distance[p, 2] /\ 
-%       abs(i - j) - 1 == distance[p, 3]
       abs(i - j) - 1 <= distance[p, 3] /\ abs(i - j) - 1 >= 1
   )
 );
 
-output[ show(persons[show_int(1, per[i])]) ++ " " | i in 1..l];
+% output;
+output[show(per)];
+
+% output["["];
+% output[ persons[fix(per[i])] ++ " " | i in 1..l];
+% output["]"];
