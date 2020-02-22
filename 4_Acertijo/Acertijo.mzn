@@ -3,6 +3,7 @@
 
 %Libraries
 include "alldifferent.mzn";
+include "increasing.mzn";
 
 %Decision Variables
 var 1..3: Juan;
@@ -31,6 +32,9 @@ constraint Juan != Gonzalez /\ Juan != vCuatro /\ Gonzalez != vSeis /\ Gonzalez 
 constraint pop != Garcia /\ pop != vCuatro;
 constraint Oscar != Lopez /\ Oscar == vCinco;
 constraint Dario != jazz;
+
+%Solving symmetries
+constraint increasing([Juan, Oscar, Dario]);
 
 solve satisfy;
 

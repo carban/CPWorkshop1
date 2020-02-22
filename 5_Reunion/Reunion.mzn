@@ -52,8 +52,8 @@ constraint forall(p in 1..ndis)(
 );
 
 % output;
-output[show(per)];
+% output[show(per)];
 
-% output["["];
-% output[ persons[fix(per[i])] ++ " " | i in 1..l];
-% output["]"];
+output["["];
+output[ persons[fix(per[i])] ++ " " | i in 1..l];
+output["]"];

@@ -1,13 +1,14 @@
 % Data example rectangle
+
 % Example 1
-% width = 5;
-% height = 4;
-% sq = [3, 2, 2, 1, 1, 1];
+width = 5;
+height = 4;
+sq = [3, 2, 2, 1, 1, 1];
 
 % Example 2
-width = 1;
-height = 3;
-sq = [1, 1, 1];
+% width = 1;
+% height = 3;
+% sq = [1, 1, 1];
 
 % Example 3
 % width = 6;
